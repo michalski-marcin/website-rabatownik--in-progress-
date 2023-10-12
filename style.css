@@ -1,0 +1,162 @@
+:root {
+  --cr-1: #a0c30a;
+  --cr-2: #82a803;
+  --cr-3: #153a3e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9;
+}
+
+header .logo-img {
+  width: 300px;
+}
+
+header .navbar ul {
+  list-style: none;
+}
+
+header .navbar ul li {
+  position: relative;
+  float: left;
+}
+
+header .navbar ul li a {
+  display: block;
+  font-size: 20px;
+  padding: 20px;
+  color: var(--cr-3);
+  transition: 0.2s;
+}
+
+header .navbar ul li ul li a {
+  font-size: 18px;
+  transition: 0s;
+}
+
+header .navbar ul li a:hover {
+  color: var(--cr-1);
+}
+
+header .navbar ul li ul li a:hover {
+  background-color: #153a3e;
+}
+
+header .navbar ul li ul {
+  position: absolute;
+  left: 0;
+  width: 200px;
+  background: #fff;
+  display: none;
+}
+
+header .navbar ul li ul li {
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header .navbar ul li ul li:first-child {
+  margin-top: 15px;
+}
+
+header .navbar ul li:focus-within > ul,
+header .navbar ul li:hover > ul {
+  display: initial;
+}
+
+#menu-bar {
+  display: none;
+}
+
+header label {
+  font-size: 20px;
+  color: var(--cr-3);
+  display: none;
+}
+
+
+
+
+/* MEDIA QUERRIES  */
+
+@media (max-width: 991px) {
+  header {
+    padding: 10px 20px;
+  }
+
+  header .logo-img {
+    width: 250px;
+  }
+
+  header label {
+    display: initial;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: -100vw;
+    width: 100vw;
+    right: 0;
+    background: #FFF;
+    transition: 0.3s;
+  }
+
+  header .navbar ul li {
+    width: 100.1vw;
+  }
+
+  header .navbar ul li ul {
+    position: relative;
+    width: 100%;
+  }
+
+  header .navbar ul li ul li {
+    background: #fbfbfb;
+  }
+
+  header .navbar ul li ul li:first-child {
+    margin-top: 0;
+  }
+
+  header .navbar ul li ul li a {
+    padding-left: 35px;
+    font-size: 17px;
+  }
+
+  #menu-bar:checked ~ .navbar {
+    left: 0;
+  }
+}
+
+
+
+
+
+@media (max-width: 480px) {
+    header .logo-img {
+        width: 200px;
+      }
+}
